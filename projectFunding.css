@@ -1,0 +1,309 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+/* 우선 순위가 높은 가상클래스 root */
+:root { width:100%; margin: 0 auto; scroll-behavior: smooth; 
+    /* color */
+    --color-primary-rgb : #333;
+    --color-reverse-rgb : #999;
+    --color-links : rgb(100, 50, 200);
+    --color-links-hover : rgba(100, 50, 200, 0.5);
+    /* font family */
+    --font-primary : 'Noto Sans KR', sans-serif;
+    }
+    
+    body { color: rgba(var(--color-primary-rgb), 1); }
+  
+    a { color: var(--color-links); text-decoration: none; }
+    
+    a:hover { color: var(--color-links-hover); text-decoration: none; }
+    
+    h1,h2,h3,h4,h5,h6 { font-family: var(--font-primary); }
+  
+  /*--------------------------------------------------------------
+  # Sections & Section Header
+  --------------------------------------------------------------*/
+  section { width:100%; margin: 0 auto; }
+  section .contentsWrap {margin: 20px 40px; padding: 20px; text-align: left; /*test code*/border: solid 1px darkblue;}
+
+  /*--------------------------------------------------------------
+  projectFunding
+  --------------------------------------------------------------*/
+.projectFunding {
+  width: auto;
+  height: auto;
+}
+
+li {
+  list-style: none;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 600;
+}
+
+h4 {
+  padding-left: 5px;
+}
+
+/*--------------------------------------------------------------
+  프로젝트 정보
+--------------------------------------------------------------*/
+.project {
+  margin: 5px 0 0 0;
+  padding: 25px 0 25px 0;
+}
+
+.projectImg { /*왼쪽 부분*/
+  float: left;
+  display: block;
+  padding: 25px 40px ;
+  padding-left: -10px;
+}
+
+#project_image {
+  width: 230px;
+  height: 150px;
+  border: 1px solid black;
+  margin: -25px -25px;
+}
+
+.projectInfo { /*오른쪽 부분*/
+  float: inline-end;
+  display: block;
+}
+
+.projectDetail {
+  display: flex;
+  margin-left: 5px;
+  margin-top: 20px;
+}
+
+.projectName {
+  font-size: 30px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.projectStatus {
+  font-weight: normal;
+  display: flex;
+  margin-left: 5px;
+}
+
+
+
+/*--------------------------------------------------------------
+  리워드 정보
+--------------------------------------------------------------*/
+.rewardInfo {
+  clear: both;
+  display: block;
+  margin-bottom: 30px;
+}
+
+.rewardDetail {
+  margin-left: 10px;
+}
+
+.rewardDetail tr th {
+  width: 150px;
+}
+
+.rewardDetail tr th td {
+  width: 500px;
+}
+
+/*--------------------------------------------------------------
+  후원자 정보
+--------------------------------------------------------------*/
+.supporterInfo {
+  clear: both;
+  display: block;
+  margin-left: 10px;
+}
+
+.contact {
+  float: left;
+  width: 150px;
+  width: 30%;
+}
+
+.messageBox {
+  float: right;
+  width: 500px;
+  width: 70%;
+  padding-top: 40px;
+}
+
+#message {
+  float: none;
+  background-color: rgba(91, 91, 91,0.05);
+  width: 330px;
+  padding-left: 5px;
+}
+
+
+/*--------------------------------------------------------------
+  배송정보
+--------------------------------------------------------------*/
+.delivery {
+  clear: both;
+  display: block;
+  margin-bottom: 30px;
+  margin-left: 10px;
+}
+
+.samePerson {
+  text-align: right;
+}
+
+.deliveryForm tr th {
+  width: 150px;
+  padding-bottom: 20px;
+}
+
+.deliveryForm tr th td {
+  width: 500px;
+}
+
+#phoneNumber1, #phoneNumber2, #phoneNumber3{
+  width: 120px;
+}
+
+#postcode {
+  width: 120px;
+}
+
+#addressFindBtn {
+  background-color: var(--color-links);
+  border: none;
+  color: white;
+  padding: 3px 10px;
+  margin-left: 10px;
+}
+
+#address1{
+  width: 150px;
+}
+
+#address2{
+  width: 300px;
+  padding-left: 5px;
+}
+
+#deliveryMemo {
+  width: 455px;
+  padding-left: 5px;
+}
+
+/*--------------------------------------------------------------
+  포인트 및 쿠폰
+--------------------------------------------------------------*/
+.point_coupon{
+  clear: both;
+  display: block;
+  margin-bottom: 30px;
+  margin-left: 10px;
+  line-height: 150%;
+}
+
+.discount tr th {
+  width: 150px;
+  padding-bottom: 8px;
+}
+
+.discount tr td {
+  width: 500px;
+}
+
+#usePoint {
+  width: 130px;
+}
+
+#useAllBtn {
+  background-color: var(--color-links);
+  border: none;
+  color: white;
+  padding: 3px 10px;
+}
+
+/*--------------------------------------------------------------
+  결제수단
+--------------------------------------------------------------*/
+.paymentOption {
+  clear: both;
+  display: block;
+  margin-bottom: 30px;
+  margin-left: 10px;
+}
+
+#card{
+  margin-left: 3px;
+  margin-right: 5px;
+}
+
+#naverpay {
+  margin-left: 10px;
+  margin-right: 5px;
+}
+
+/*--------------------------------------------------------------
+  최종확인
+--------------------------------------------------------------*/
+.finalConfirm {
+  clear: both;
+  display: block;
+  margin-bottom: 30px;
+  margin-left: 10px;
+  line-height: 200%;
+}
+
+.fundingAmount { /*결제 금액 계산*/
+  margin-bottom: 15px;
+  padding: 5px 0 5px 10px;
+  background-color: rgba(91, 91, 91,0.05);
+}
+
+
+.fundingAmount table tr th {
+  width: 150px;
+}
+
+.fundingNotice ul li {
+  margin-left: -20px;
+  }
+  
+.fundingMessage {
+  margin-top: 10px;
+  font-size: 18px;
+}
+#checkbox {
+  margin-top: -15px;
+  margin-left: 20px;
+}
+
+.fundingBtn { /*후원하기 버튼*/
+  width: 120px;
+  height: 50px;
+  line-height: 100%;
+  margin: 20px 50px 0 200px;
+  background-color: var(--color-links);
+  color: white;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  border: none;
+}
+
+
+footer { height: 200px; text-align: center; background-color: #333; color: var(--color-reverse-rgb);}
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
