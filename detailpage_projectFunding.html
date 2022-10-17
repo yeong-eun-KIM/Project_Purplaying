@@ -13,8 +13,11 @@
   <link rel="stylesheet" href="assets/css/main.css" > <!-- main style-->
   <link rel="stylesheet" href="assets/css/headers.css" > <!-- header-->
   <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/headers/"> <!-- header-->
-  
-  <link rel="stylesheet" href="assets/css/projectFunding.css"> <!-- donate-->
+  <link rel="stylesheet" href="assets/css/projectFunding.css"> <!-- projectFunding-->
+
+  <!-- JS -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script> 
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
   <title>Purplaying</title>
 
@@ -88,10 +91,10 @@
     <h1 class="visually-hidden">홈</h1>
     <div class="contentsWrap">
       <!--컨텐츠 영역-->
-      <h1>펀딩 프로젝트 후원하기</h1>
-
+      
       <!-- Ldiv 1개 > Mdiv 7개 -->
       <div class="projectFunding">
+        <h1>펀딩 프로젝트 후원하기</h1>
 
         <!-- 프로젝트명 -->
         <div class="project">
@@ -182,15 +185,16 @@
               <tr>
                 <th>주소</th>
                 <td>
-                  <input type="text" id="postcode" readonly>
-                  <button id="addressFindBtn">주소찾기</button>
+                  <input type="text" id="postcode" placeholder="우편번호" readonly>
+                  <!--JavaScript 삽입됨-->
+                  <input type="button" id="addressFindBtn" onclick="execDaumPostcode()" value="주소 찾기">
                 </td>
               </tr>
               <tr>
                 <th></th>
                 <td>
-                  <input type="text" id="address1" required>
-                  <input type="text" id="address2"placeholder="상세주소">
+                  <input type="text" id="address" placeholder="주소" required>
+                  <input type="text" id="detailAddress" placeholder="상세주소" maxlength="50">
                 </td>
               </tr>
               <tr>
@@ -208,7 +212,7 @@
           <table class="discount">
             <tr>
               <th>쿠폰 선택</th>
-              <td style="text-align: right;">
+              <td>
                 <select>
                 <option selected>선택 가능한 쿠폰</option>
                 <option>축! 신규 가입 쿠폰 -1,000원</option>
@@ -217,11 +221,11 @@
             </tr>
             <tr>
               <th>포인트 사용</th>
-              <td style="text-align: right;">보유포인트 0P</td>
+              <td style="padding-left: 410px; line-height: 100%;">보유포인트 <strong>0 </strong>P</td>
             </tr>
             <tr>
               <th></th>
-              <td style="text-align: right;">
+              <td>
                 <input type="text" id="usePoint">
                 <button id="useAllBtn">모두 사용</button>
               </td>
@@ -297,6 +301,25 @@
 
 </main>
 
-<script src="assets/js/bootstrap.bundle.min.js"></script> 
+<script>
+  function execDaumPostcode() { // 주소찾기 JS (다음 POSTCODE API 사용)
+        new daum.Postcode({
+            oncomplete: function(data) {
+                var addr = '';
+                var extraAddr = '';
+
+                if (data.userSelectedType === 'R') { 
+                    addr = data.roadAddress;
+                } else { 
+                    addr = data.jibunAddress;
+                }
+
+                document.getElementById('postcode').value = data.zonecode;
+                document.getElementById("address").value = addr;
+                document.getElementById("detailAddress").focus();
+            }
+        }).open();
+    }
+</script>
 </body>
 </html>
