@@ -41,9 +41,13 @@ h4, .lb {
 }
 
 .thumnail {
-  width: 200px;
+  min-width: fit-content;
+  width: 180px;
+  max-width: 180px;
+  min-height: fit-content;
   height: 150px;
-  border: 1px solid black;
+  max-height: 150px;
+  border: none;
 }
 
 .msg{
@@ -84,6 +88,17 @@ input[type="text"]{
   text-align: center;
   font-weight: bold;
   width: 100px;
+}
+
+
+.paycontent{
+  display: none;
+  width: auto;
+  height: 300px;
+}
+
+#naver:checked ~ #naver_pay{
+  display: block;
 }
 
 .fundingFinal{
