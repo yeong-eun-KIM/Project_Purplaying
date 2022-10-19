@@ -86,86 +86,88 @@
     </div>
   </header>
 
-  <!--메인 컨테이너 -->
+  <!--세션 영역 시작 -->
   <section class="container">
     <h1 class="visually-hidden">홈</h1>
     <div class="contentsWrap row">
 
-      <!--바디 영역 시작-->
+      <!--내부 영역 시작-->
         <div class="col-1"></div>
 
         <!--컨텐츠 영역 시작-->
-        <div class="projectFunding col-10 lh-lg">
+        <div class="col-10 lh-lg">
           <h1 class="fw-bold text-center py-3 mb-3">펀딩 프로젝트 후원하기</h1>
 
           <!-- 프로젝트명 -->
-          <div class="project pb-5">
+          <div class="pb-5">
             <div class="row">
              
-              <div class="projectImg col-4 text-end">
-                <img class="thumnail" src="assets\img\logo_img.png" alt="프로젝트이미지">
+              <div class="col-4 text-end">
+                <img class="cs_thumnail" id="dt_fundingImg" src="assets\img\logo_img.png" alt="프로젝트이미지">
               </div>
-              <div class="projectInfo col-6 mt-2">
-                <div class="projectDetail row">
-                  <div class="col-10" id="category">카테고리명 / 제작자명</div>
+              <div class="col-6 mt-2">
+                <div class="row">
+                  <div class="col-10"><span id="dt_category">카테고리명</span> 
+                    / 
+                    <span id="dt_creator">제작자명</span></div>
                 </div>
-                <div class="projectName col">프로젝트명_Purplaying</div>
-                <div class="projectStatus row">
-                  <div class="col-4" id="fundingMoney">1,234,567 원</div>
-                  <div class="col-2" id="fundingPercent">123%</div>
-                  <div class="col-4" id="fundingDday">10일 남음</div>
+                <div class="col cs_projectName"><span id="dt_fundingName">프로젝트명_Purplaying</span></div>
+                <div class="row">
+                  <div class="col-4"><span id="dt_fundingMoney">1,234,567</span>원 모금</div>
+                  <div class="col-3"><span id="dt_fundingPercent">123</span>% 달성</div>
+                  <div class="col-3">종료 D-<span id="dt_fundingDday">10</span></div>
                 </div>
             </div>
             </div>
           </div>
 
           <!-- 리워드 정보 -->
-          <div class="rewardInfo pb-4">
+          <div class="pb-4">
             <h4>리워드 정보</h4>
             <hr>
-            <div class="rewardDetail between row mx-1">
-                <div class="col-2 lb">
+            <div class="row justify-content-between mx-1">
+                <div class="col-2 fw-bold">
                   리워드 패키지<br>
                   리워드 가격<br>
                   구성품
                 </div>
                 <div class="col-7 text-end">
-                  [패키지명1]<br>
-                  20,000원<br>
-                  구성품1<br>
-                  구성품2
+                  [<span id="dt_package">패키지명1</span>]<br>
+                  <span id="dt_price">20,000</span>원<br>
+                  <span id="dt_item">구성품1<br>
+                  구성품2</span>
                 </div>
             </div>
           </div>
 
           <!-- 후원자 정보 -->
-          <div class="supporterInfo pb-4">
+          <div class="pb-4">
             <h4>후원자 정보</h4>
             <hr>
-            <div class="between row mx-1">
-                <div class="contact col-4">
-                  <div class="lb">연락처</div>
-                  <div>010-2023-0111</div>
+            <div class="row justify-content-between mx-1">
+                <div class="col-4">
+                  <div class="fw-bold">연락처</div>
+                  <div id="dt_phoneNM">010-2023-0111</div>
                   <br>
-                  <div class="lb">이메일</div>
-                  <div>Purplaying@email.com</div>
+                  <div class="fw-bold">이메일</div>
+                  <div id="dt_email">Purplaying@email.com</div>
                 </div>
-                <div class="messageBox col-5 py-3 my-4">
-                  <div class="text-left px-3 py-2 msg text-break" id="message">기입된 연락처 또는 이메일로 프로젝트에 대한
+                <div class="col-5 py-3 my-4">
+                  <div class="text-left text-break px-3 py-2 cs_msg">기입된 연락처 또는 이메일로 프로젝트에 대한
                     알림 및 소식이 전달됩니다.</div>
                 </div>
             </div>
           </div>
 
           <!-- 배송 정보 -->
-          <div class="delivery pb-4">
+          <div class="pb-4">
             <h4>배송정보</h4>
             <hr>
-              <div class="samePerson col-12 text-end pe-3">
-                <input type="checkbox" id="sameChb">
-                <label for="sameChb">후원자 정보와 동일</label>
+              <div class="col-12 text-end pe-3">
+                <input type="checkbox" id="dt_sameChk">
+                <label for="dt_sameChk">후원자 정보와 동일</label>
               </div>
-              <div class="deliveryInfo between row lb mx-1">
+              <div class="row fw-bold justify-content-between mx-1">
                 <div class="col-2 ps-2">
                     수령인<br>
                     연락처<br>
@@ -173,82 +175,82 @@
                     배송요청사항
                 </div>
                 <div class="col-9 text-end">
-                    <input type="text" id="recieverName" maxlength="7" required><br>
-                    <input type="text" id="phoneNumber" maxlength="12" required><br>
-                    <input type="text" id="postcode" placeholder="우편번호" readonly>
+                    <input type="text" id="dt_recieverName" maxlength="7" required><br>
+                    <input type="text" id="dt_phoneNumber" maxlength="12" required><br>
+                    <input type="text" class="cs_postcode" id="dt_postcode" placeholder="우편번호" readonly>
                     <!--JavaScript 삽입됨-->
                     <input type="button" class="btn" id="addressFindBtn" onclick="execDaumPostcode()" value="주소 찾기"><br>
-                    <input type="text" id="address" placeholder="기본주소" required>
-                    <input type="text" id="detailAddress" placeholder="상세주소" maxlength="50"><Br>
-                    <input type="text" id="deliveryMemo" placeholder="배송시 요청 사항을 작성하세요." maxlength="50">
+                    <input type="text" class="cs_address" id="dt_address" placeholder="기본주소" required>
+                    <input type="text" class="cs_detailAddress" id="dt_detailAddress" placeholder="상세주소" maxlength="50"><Br>
+                    <input type="text" class="cs_deliveryMemo" placeholder="배송시 요청 사항을 작성하세요." maxlength="50">
                 </div>
               </div>
           </div>
 
           <!-- 포인트 및 쿠폰 -->
-          <div class="point_coupon pb-4">
+          <div class="pb-4">
             <h4>포인트 및 쿠폰</h4>
             <hr>
-            <div class="discount between row mx-1">
-                <div class="col-2 ps-2 lb">
+            <div class="row justify-content-between mx-1">
+                <div class="col-2 fw-bold ps-2">
                   쿠폰 선택<br>
                   포인트 사용
                 </div>
                 <div class="col-7 pe-3 text-end">
                   <select>
                   <option selected>선택 가능한 쿠폰</option>
-                  <option>축! 신규 가입 쿠폰 -1,000원</option>
+                  <option id="dt_coupon">축! 신규 가입 쿠폰 -1,000원</option>
+                  <option id="dt_coupon">5만원 이상 후원시 할인 -1,500원</option>
                   </select><br>
-                  보유포인트 <strong>0 </strong>P<br>
-                  <input class="text-end" type="text" id="usePoint">
+                  보유포인트 <span id="dt_point"><strong>0 </strong></span>P<br>
+                  <input type="text" class="text-end" id="dt_usePoint">
                   <button class="btn" id="useAllBtn">모두 사용</button>
                 </div>
             </div>
           </div>
 
           <!-- 결제수단 선택 -->
-          <div class="paymentOption pb-4">
+          <div class="pb-4">
             <h4>결제수단 선택</h4>
             <hr>
-            <div class="selectOption row mx-1">
+            <div class="row mx-1">
               <div class="col-10">
-                <input type="radio" class="col-1" id="card" name="option" checked>
-                <label for="card">카드결제</label>
-                <input type="radio" class="col-1" id="naver" name="option">
-                <label for="naver">네이버페이</label>
-                <div id="naver_pay" class="paycontent">페이부분</div>
+                <input type="radio" id="creditCard" name="payOption" checked hidden>
+                <label for="creditCard">카드결제</label>
+                <input type="radio"  id="naverpay" name="payOption" hidden>
+                <label for="naverpay">네이버페이</label>
               </div>
             </div>
-            <div class="paycontent"></div>
           </div>   
-
+          
           <!-- 최종 확인 -->
-          <div class="finalConfirm">
-            <div class="fundingAmount between row msg mx-1">
+            <!-- 결제 금액 계산 -->
+            <div class="row justify-content-between mx-1 cs_msg">
                 <div class="col-2 fw-bold">
                   후원 금액<br>
                   할인 금액<br>
                   결제 금액
                 </div>
                 <div class="col-7 text-end">
-                  20,000원<br>
-                  -1,000원 [축! 신규 가입 쿠폰]<br>
-                  -1,000원 [1,000 포인트 사용]<br>
-                  18,000원
+                  <span id="dt_fundingPrice">20,000</span>원<br>
+                  <span id="dt_usedCoupon">-1,000원 [축! 신규 가입 쿠폰]</span><br>
+                  <span id="dt_usedPoint">-1,000원 [1,000 포인트 사용]</span><br>
+                  <span id="dt_totalPrice">18,000</span>원
                 </div>
             </div>
-            <div class="fundingNotice mt-3 pt-2"> <!-- 펀딩 유의 사항 -->
+            <!-- 펀딩 유의 사항 -->
+            <div class="mt-3 pt-2"> 
               <h4>펀딩 유의 사항</h4>
               <hr>
-              <div class="row msg mx-1 py-3">
+              <div class="row py-3 mx-1 cs_msg">
                 <div class="col-7">
                 후원은 구매가 아니며, 프로젝트에 대한 자금 지원입니다.<br>
                 프로젝트는 계획과 다르게 진행 될 수 있습니다.
                 </div>    
-                <div class="text-end col-5 ps-2" id="checkbox">
+                <div class="col-5 text-end ps-2">
                   <div>
-                    <input  id="chb1" type="checkbox" name="agree" required>
-                    <label for="chb1">개인정보 제 3자 제공 동의</label>
+                    <input  id="chk1" type="checkbox" name="agree" required>
+                    <label for="chk1">개인정보 제 3자 제공 동의</label>
                     <a data-bs-toggle="modal" data-bs-target="#agree4Modal" href="#">내용보기</a>
                      <!-- Modal -->
                      <div class="modal fade" id="agree4Modal" tabindex="-1" aria-labelledby="agree4ModalLabel" aria-hidden="true">
@@ -272,29 +274,28 @@
                     </div> <!-- Modal end-->
                   </div>
                   <div>
-                    <input  id="chb2" type="checkbox" name="agree" required>
-                    <label for="chb2">유의 사항 확인</label>
+                    <input  id="chbk" type="checkbox" name="agree" required>
+                    <label for="chbk">유의 사항 확인</label>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="fundingFinal row">
+            <div class="row justify-content-center">
               <div class="col-8 text-center">
-                <div class="fundingMessage fs-5 mt-4 mb-2">펀딩이 성공하면 <strong>2023.01.11</strong> 에 자동으로 결제됩니다.</div>
-                <button class="fundingBtn btn fs-3 w-50 mt-3 mb-3">후원하기</button>
+                <div class="fs-5 mt-4 mb-2">펀딩이 성공하면 <span id="payDate"><strong>2023.01.11</strong></span> 에 자동으로 결제됩니다.</div>
+                <button class="btn fs-3 w-50 mt-3 mb-3">후원하기</button>
               </div>
             </div> 
           </div>
 
-        </div>  
-        <!--컨텐츠 영역 종료-->
+        </div> <!--컨텐츠 영역 종료-->
 
-      </div>
-      <!--바디 영역 종료-->
-
+        <div class="col-1"></div>
+      <!--내부 영역 종료-->
+      
     </div>
-  </section>
-  <!--메인 컨테이너 종료-->
+  </section>  <!--세션 영역 종료-->
+ 
   
 
   <!--푸터 -->
@@ -307,7 +308,16 @@
 </main>
 
 <script>
-  function execDaumPostcode() { // 주소찾기 JS (다음 POSTCODE API 사용)
+
+  function funding_percent(){
+    var fp = document.getElementById("dt_fundingPercent");
+    if(fp >=100){
+      document.getElementById("dt_fundingPercent").style.color = "red";
+    }
+  } 
+
+  /*----주소 찾기----*/
+  function execDaumPostcode() { 
         new daum.Postcode({
             oncomplete: function(data) {
                 var addr = '';
@@ -319,12 +329,13 @@
                     addr = data.jibunAddress;
                 }
 
-                document.getElementById('postcode').value = data.zonecode;
-                document.getElementById("address").value = addr;
-                document.getElementById("detailAddress").focus();
+                document.getElementById('dt_postcode').value = data.zonecode;
+                document.getElementById("dt_address").value = addr;
+                document.getElementById("dt_detailAddress").focus();
             }
         }).open();
-    }
+    } //API reference  http://postcode.map.daum.net/guide
+
 </script>
 </body>
 </html>

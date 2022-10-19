@@ -27,20 +27,31 @@ section { width:100%; margin: 0 auto; }
 section .contentsWrap {
   margin: 20px 40px; 
   padding: 20px; 
-  text-align: left; 
+  text-align: left; /*기존 시트에서 수정*/
   /*test code*/border: solid 1px darkblue;
   }
 
-h4, .lb {
+
+/*기존,부트스트랩 태그에 추가*/
+h4 {
   font-weight: bold;
 }
 
-
-.between{
-  justify-content: space-between;
+input[type="text"]{
+  height: 28px;
+  margin: 2.5px 0;
 }
 
-.thumnail {
+.btn{
+  color: white;
+  font-weight: bold;
+  background-color: var(--color-links);
+}
+
+/*--------------------------------------------------------------
+# Custom Style (cs_스타일이름)
+--------------------------------------------------------------*/
+.cs_thumnail {
   min-width: fit-content;
   width: 180px;
   max-width: 180px;
@@ -50,67 +61,34 @@ h4, .lb {
   border: none;
 }
 
-.msg{
-  background-color: rgba(128,128,128,0.05);
-}
-
-.projectName{
+.cs_projectName{
   font-size: 30px;
   font-weight: bold;
 }
 
-
-input[type="text"]{
-  height: 28px;
-  margin: 2.5px 0;
+.cs_msg{
+  background-color: rgba(128,128,128,0.05);
 }
 
-#postcode{
+.cs_postcode{
   width: 120px;
-
 }
 
-#address{
+.cs_address{
   width: 140px;
 }
 
-#detailAddress{
+.cs_detailAddress{
   width: 240px;
 }
 
-#deliveryMemo{
+.cs_deliveryMemo{
   width: 450px;
 }
 
-.pay{
-  background-color: var(--color-links);
-  color: white;
-  text-align: center;
-  font-weight: bold;
-  width: 100px;
-}
-
-
-.paycontent{
-  display: none;
-  width: auto;
-  height: 300px;
-}
-
-#naver:checked ~ #naver_pay{
-  display: block;
-}
-
-.fundingFinal{
-  justify-content: center;
-}
-
-.btn{
-  background-color: var(--color-links);
-  color: white;
-  font-weight: bold;
-}
-
+/*--------------------------------------------------------------
+# footer
+--------------------------------------------------------------*/
 footer { height: 200px; text-align: center; background-color: #333; color: var(--color-reverse-rgb);}
 .bd-placeholder-img {
   font-size: 1.125rem;
