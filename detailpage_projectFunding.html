@@ -100,8 +100,8 @@
 
           <!-- 프로젝트명 -->
           <div class="pb-4">
-            <div class="row">             
-              <div class="col-4 text-end">
+            <div class="row justify-content-center">             
+              <div class="col-4 text-center">
                 <img class="cs_thumnail" id="dt_fundingImg" src="assets\img\logo_img.png" alt="프로젝트이미지">
               </div>
               <div class="col-6 mt-2">
@@ -242,33 +242,72 @@
               </ul>
               <div class="tab-content" id="pills-tabContent">
                 <!--간편 결제 내용-->
-                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
-
+                <div class="tab-pane fade show active d-flex col-6" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                  <div class="d-flex">
+                    <a data-bs-toggle="modal" data-bs-target="#agree4Modal" href="#"><img class="cs_cardImg" src="/assets/img/cardMine.PNG"></a>
+                    <!-- Modal -->
+                    <div class="modal fade" id="agree4Modal" tabindex="-1" aria-labelledby="agree4ModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="agree4ModalLabel">간편 결제 창</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="checked_agree4()">결제</button>
+                          </div>
+                        </div>
+                      </div>
+                  </div> <!-- Modal end-->
+                    <a data-bs-toggle="modal" data-bs-target="#agree4Modal" href="#"><img class="cs_cardImg" src="/assets/img/cardADD.PNG"></a>
+                    <!-- Modal -->
+                    <div class="modal fade" id="agree4Modal" tabindex="-1" aria-labelledby="agree4ModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="agree4ModalLabel">간편 카드 추가 창</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="checked_agree4()">결제</button>
+                          </div>
+                        </div>
+                      </div>
+                  </div> <!-- Modal end-->
+                  </div>
                 </div>
-                <!--카트 결제 내용-->
+                <!--카드 결제 내용-->
                 <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
-                  <div class="row">
-                    <div class="col-9">
-                      <label class="col-2 fw-bold text-start me-1">카드 번호</label>
-                      <input type="text" class="col-2 me-1" id="dt_cardNumber1" maxlength="4" required>
-                      <input type="text" class="col-2 me-1" id="dt_cardNumber2" maxlength="4" required>
-                      <input type="text" class="col-2 me-1" id="dt_cardNumber3" maxlength="4" required>
-                      <input type="text" class="col-2" id="dt_cardNumber4" maxlength="4" required>
+                  <div>
+                    <div class="d-flex justify-content-between">
+                      <div class="d-flex justify-content-between col-8">
+                        <label class="col-3 fw-bold text-start me-1">카드번호</label>
+                        <div class="col-9">
+                          <input type="text" class="col-2 me-1" id="dt_cardNumber1" maxlength="4" required>
+                          <input type="text" class="col-2 me-1" id="dt_cardNumber2" maxlength="4" required>
+                          <input type="text" class="col-2 me-1" id="dt_cardNumber3" maxlength="4" required>
+                          <input type="text" class="col-2" id="dt_cardNumber4" maxlength="4" required>
+                        </div>
+                      </div>
+                      <div class="d-flex col-4">
+                        <label class="col-3 fw-bold me-2">할부기간</label>
+                        <select class="col-6">
+                          <option selected>일시불</option>
+                          <option selected>2개월</option>
+                          <option selected>3개월</option>
+                          <option selected>4개월</option>
+                          <option selected>5개월</option>
+                        </select>
+                      </div>
                     </div>
-                    <div class="col-3">
-                      <label class="col-3 fw-bold me-2">할부</label>
-                      <select>
-                        <option selected>일시불</option>
-                        <option selected>2개월</option>
-                        <option selected>3개월</option>
-                        <option selected>4개월</option>
-                        <option selected>5개월</option>
-                      </select>
-                    </div>
-                  <div class="row">
+                  <div class="d-flex">
                     <div class="col-6">
                       <label class="col-3 fw-bold text-start me-2">유효기간</label>
-                      <input type="text" class="col-3" id="dt_validDate" maxlength="4" placeholder="MMYY" required>
+                      <input type="text" class="col-3 ms-3" id="dt_validDate" maxlength="4" placeholder="MMYY" required>
                     </div>
                     <div class="col-5">
                       <label class="fw-bold text-start me-2">카드 비밀번호</label>
