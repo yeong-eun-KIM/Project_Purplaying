@@ -1,4 +1,4 @@
-# projectFunding_1021 Version
+# projectFunding_1023 Version
 <b>html</b> - detailpage_projectFunding.html<br>
 <b>css</b> - assets/css/projectFunding.css<br>
 *class=""은 css 관련 속성이며 class="cs_스타일이름"은 커스텀 스타일입니다.<br>
@@ -8,7 +8,7 @@
 *작업 필요:카드결제 클릭시 간편결제 이미지가 보이는 부분<br>
 => 결제영역 탭을 분리하는게 나을것으로 보임
 <h2>작업 로그</h2>
-<b>1022_detailpage_projectFunding</b><br>
+<b>1023_detailpage_projectFunding</b><br>
 - 간편결제 기존카드 클릭시 모달 창 제거<br>
 
 1021<br>
