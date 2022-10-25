@@ -105,10 +105,26 @@
                 <img class="cs_thumnail" id="dt_fundingImg" src="assets\img\logo_img.png" alt="프로젝트이미지">
               </div>
               <div class="col-6 mt-2">
-                <div class="row">
-                  <div class="col-10"><span id="dt_category">카테고리명</span> 
+                <div class="d-flex">
+                  <span id="dt_category">카테고리명</span> 
                     / 
-                    <span id="dt_creator">제작자명</span></div>
+                  <span id="dt_creator">제작자명</span>
+                  <button data-bs-toggle="modal" data-bs-target="#agree4Modal">공유</button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="agree4Modal" tabindex="-1" aria-labelledby="agree4ModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="agree4ModalLabel">공유하기</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-footer">
+                            <input class="col-10" id="showURL">
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="copyURL()">공유</button>
+                          </div>
+                        </div>
+                      </div>
+                  </div> <!-- Modal end-->
                 </div>
                 <div class="fs-3 fw-bold"><span id="dt_fundingName">프로젝트명_Purplaying</span></div>
                 <div class="d-flex">
@@ -403,12 +419,23 @@
 
 <script>
 
-  function funding_percent(){
-    var fp = document.getElementById("dt_fundingPercent");
-    if(fp >=100){
-      document.getElementById("dt_fundingPercent").style.color = "red";
-    }
-  } 
+  //현재페이지 URL 가져오기
+  document.getElementById("showURL").value = window.location.pathname;
+
+  //클립보드에 현재페이지 URL 저장하기
+  function copyURL(){
+    var content = document.getElementById("showURL").value;
+
+    navigator.clipboard.writeText(content)
+      .then(() => {
+        alert("복사 성공");
+      })
+      .catch(e => {
+        alert("복사 실패");
+      })
+   } 
+  
+
 
   /*----주소 찾기----*/
   function execDaumPostcode() { 
